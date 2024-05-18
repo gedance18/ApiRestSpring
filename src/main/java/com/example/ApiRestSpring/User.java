@@ -2,36 +2,32 @@ package com.example.ApiRestSpring;
 
 import jakarta.persistence.*;
 
+
 @Entity
-@Table(name = "users")
+@Table(name="users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(name = "nombre")
-    private String nombre;
-    @Column(name = "email")
+    private Long id;
+    private String name;
     private String email;
-    @Column(name = "password")
-    private String password;
 
-
-
-    public int getId() {
+    // Getters and Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -40,13 +36,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
